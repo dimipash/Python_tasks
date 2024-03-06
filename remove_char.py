@@ -12,10 +12,10 @@ def remove_char(text, position):
     Raises:
     IndexError: If the position is greater than the length of the string.
     """
-   
+
     if position > len(text):
         raise IndexError("Position out of range.")
     return text[:position] + text[position + 1:]
 
-print(remove_char("albala", 2))  # Output: "alala"
 
+print(remove_char("albala", 2))  # Output: "alala"
