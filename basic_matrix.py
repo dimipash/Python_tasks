@@ -1,50 +1,31 @@
-class Matrix:
-    """
-    This class represents a matrix of numbers.
+"""
+This class implements a basic matrix data structure and provides a method to extract submatrices.
 
-    Attributes:
-        data (list of lists): A 2D list representing the matrix.
-    """
+Attributes:
+    data (list): A 2D list representing the matrix data.
+
+Methods:
+    submatrix(self, row_indexes, col_indexes):
+        Extracts a submatrix from the main matrix based on the provided row and column indices.
+
+Raises:
+    TypeError: If the provided row or column indices are not of a supported type
+               (range, slice, list, or tuple).
+"""
+
+
+class Matrix:
 
     def __init__(self, rows, cols):
-        """
-        The constructor for the Matrix class.
-
-        Args:
-            rows (int): The number of rows in the matrix.
-            cols (int): The number of columns in the matrix.
-        """
         self.data = [[0 for _ in range(cols)] for _ in range(rows)]
 
     def submatrix(self, row_indexes, col_indexes):
-        """
-        This method returns a submatrix specified by the given row and column indexes.
-
-        Args:
-            row_indexes (range, slice, list, tuple): The indexes of the rows to be included in the submatrix.
-            col_indexes (range, slice, list, tuple): The indexes of the columns to be included in the submatrix.
-
-        Returns:
-            list of lists: The submatrix as a 2D list.
-        """
         row_indexes = self._convert_to_range(row_indexes)
         col_indexes = self._convert_to_range(col_indexes)
 
         return [[self.data[row][col] for col in col_indexes] for row in row_indexes]
 
     def _convert_to_range(self, indexes):
-        """
-        This private method converts various types of indexes to a range.
-
-        Args:
-            indexes (range, slice, list, tuple): The indexes to be converted.
-
-        Returns:
-            range: The indexes as a range.
-
-        Raises:
-            TypeError: If the type of indexes is not supported.
-        """
         if isinstance(indexes, range):
             return indexes
         if isinstance(indexes, slice):
