@@ -1,0 +1,32 @@
+{
+    "company": {
+      "name": "Tech Comp",
+      "employees": [
+        {
+          "id": 3456,
+          "name": "John Brown",
+          "department": "Engineering"
+        },
+        {
+          "id": 7890,
+          "name": "Sarah Davis",
+          "department": "Marketing"
+        },
+        {
+          "id": 2345,
+          "name": "Mike Johnson",
+          "department": "Sales"
+        },
+        {
+          "id": 6789,
+          "name": "Emily Garcia",
+          "department": "HR"
+        },
+        {
+          "id": 1234,
+          "name": "Alex Smith",
+          "department": "Finance"
+        }
+      ]
+    }
+  }
